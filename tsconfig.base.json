@@ -1,0 +1,23 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2019", "dom", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@ff/module-manager": ["libs/module-manager/src/index.ts"],
+      "other-app": ["apps/other-app/src/remote-entry.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@ff/module-manager",
+  "version": "0.0.1",
+  "devDependencies": {
+    "@types/webpack": "5.28.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  }
+}

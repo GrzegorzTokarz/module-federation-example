@@ -1,0 +1,8 @@
+{
+  "name": "@ff/plugin-ff",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "root": "libs/plugin-ff",
+  "sourceRoot": "libs/plugin-ff/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "generateIndexHtml": false,
+        "outputPath": "dist/libs/plugin-ff",
+        "index": "",
+        "main": "libs/plugin-ff/src/index.ts",
+        "tsConfig": "libs/plugin-ff/tsconfig.lib.json",
+        "assets": [
+          {
+            "glob": "libs/plugin-ff/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "libs/plugin-ff/webpack.config.js"
+      },
+      "configurations": {
+        "production": {
+          "optimization": {
+            "scripts": true,
+            "styles": true
+          },
+          "outputHashing": "all",
+          "sourceMap": false,
+          "extractCss": true,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "2mb",
+              "maximumError": "5mb"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:file-server",
+      "options": {
+        "buildTarget": "plugin-ff:build",
+        "port": 4300
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "plugin-ff:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/plugin-ff/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/plugin-ff"],
+      "options": {
+        "jestConfig": "libs/plugin-ff/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
